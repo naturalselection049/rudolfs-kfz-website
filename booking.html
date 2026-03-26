@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Termin buchen | Rudolfs KFZ-Werkstatt</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/booking.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>🔧 RUDOLFS KFZ</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Start</a></li>
+                <li><a href="services.html">Leistungen</a></li>
+                <li><a href="booking.html">Termin</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Booking Section -->
+    <section class="booking-section">
+        <div class="container">
+            <h1>Termin online buchen</h1>
+            <p class="subtitle">Wählen Sie Ihren Wunschtermin für den Service</p>
+            
+            <div class="booking-container">
+                <!-- Schritt 1: Service auswählen -->
+                <div class="booking-step" id="step1">
+                    <h2>1. Service auswählen</h2>
+                    <div class="service-selection">
+                        <div class="service-option" data-service="diagnose">
+                            <span class="icon">🔍</span>
+                            <h3>Fahrzeugdiagnose</h3>
+                            <p>Computergestützte Fehlerauslesung</p>
+                            <span class="price">CHF 80-150</span>
+                            <span class="duration">30-60 Min</span>
+                        </div>
+                        <div class="service-option" data-service="tuev">
+                            <span class="icon">📋</span>
+                            <h3>TÜV Durchsicht</h3>
+                            <p>Vorbereitung und MFK</p>
+                            <span class="price">CHF 120-180</span>
+                            <span class="duration">60 Min</span>
+                        </div>
+                        <div class="service-option" data-service="inspektion-klein">
+                            <span class="icon">⚙️</span>
+                            <h3>Kleine Inspektion</h3>
+                            <p>Öl, Filter, Sicherheitscheck</p>
+                            <span class="price">CHF 150-250</span>
+                            <span class="duration">1-2 Std</span>
+                        </div>
+                        <div class="service-option" data-service="inspektion-gross">
+                            <span class="icon">⚙️</span>
+                            <h3>Grosse Inspektion</h3>
+                            <p>Umfangreicher Service</p>
+                            <span class="price">CHF 350-550</span>
+                            <span class="duration">3-4 Std</span>
+                        </div>
+                        <div class="service-option" data-service="oelwechsel">
+                            <span class="icon">🛢️</span>
+                            <h3>Ölwechsel</h3>
+                            <p>Qualitätsöl inkl. Filter</p>
+                            <span class="price">CHF 100-180</span>
+                            <span class="duration">30 Min</span>
+                        </div>
+                        <div class="service-option" data-service="bremsen">
+                            <span class="icon">🛑</span>
+                            <h3>Bremsen Service</h3>
+                            <p>Beläge, Scheiben, Flüssigkeit</p>
+                            <span class="price">CHF 200-400</span>
+                            <span class="duration">2-3 Std</span>
+                        </div>
+                        <div class="service-option" data-service="klima">
+                            <span class="icon">❄️</span>
+                            <h3>Klima Service</h3>
+                            <p>Wartung & Desinfektion</p>
+                            <span class="price">CHF 150-250</span>
+                            <span class="duration">1-2 Std</span>
+                        </div>
+                        <div class="service-option" data-service="reifen">
+                            <span class="icon">🔧</span>
+                            <h3>Reifenwechsel</h3>
+                            <p>Saisonaler Wechsel</p>
+                            <span class="price">CHF 80-120</span>
+                            <span class="duration">30 Min</span>
+                        </div>
+                        <div class="service-option" data-service="sonstiges">
+                            <span class="icon">🔧</span>
+                            <h3>Sonstiges</h3>
+                            <p>Individuelle Reparatur</p>
+                            <span class="price">Nach Aufwand</span>
+                            <span class="duration">Variabel</span>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary next-btn" onclick="nextStep(2)">Weiter</button>
+                </div>
+
+                <!-- Schritt 2: Datum & Zeit -->
+                <div class="booking-step" id="step2" style="display: none;">
+                    <h2>2. Datum & Zeit wählen</h2>
+                    <div class="datetime-selection">
+                        <div class="date-picker">
+                            <label for="booking-date">Datum:</label>
+                            <input type="date" id="booking-date" min="" required>
+                        </div>
+                        <div class="time-slots">
+                            <label>Verfügbare Zeiten:</label>
+                            <div class="time-grid">
+                                <button class="time-slot" data-time="07:30">07:30</button>
+                                <button class="time-slot" data-time="08:00">08:00</button>
+                                <button class="time-slot" data-time="08:30">08:30</button>
+                                <button class="time-slot" data-time="09:00">09:00</button>
+                                <button class="time-slot" data-time="09:30">09:30</button>
+                                <button class="time-slot" data-time="10:00">10:00</button>
+                                <button class="time-slot" data-time="10:30">10:30</button>
+                                <button class="time-slot" data-time="11:00">11:00</button>
+                                <button class="time-slot" data-time="13:30">13:30</button>
+                                <button class="time-slot" data-time="14:00">14:00</button>
+                                <button class="time-slot" data-time="14:30">14:30</button>
+                                <button class="time-slot" data-time="15:00">15:00</button>
+                                <button class="time-slot" data-time="15:30">15:30</button>
+                                <button class="time-slot" data-time="16:00">16:00</button>
+                                <button class="time-slot" data-time="16:30">16:30</button>
+                                <button class="time-slot" data-time="17:00">17:00</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="booking-nav">
+                        <button class="btn btn-secondary" onclick="prevStep(1)">Zurück</button>
+                        <button class="btn btn-primary next-btn" onclick="nextStep(3)">Weiter</button>
+                    </div>
+                </div>
+
+                <!-- Schritt 3: Kunden Daten -->
+                <div class="booking-step" id="step3" style="display: none;">
+                    <h2>3. Ihre Daten</h2>
+                    <form id="booking-form" class="booking-form">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required placeholder="Ihr vollständiger Name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">E-Mail *</label>
+                            <input type="email" id="email" name="email" required placeholder="ihre@email.ch">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Telefon *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="+41 44 123 45 67">
+                        </div>
+                        <div class="form-group">
+                            <label for="vehicle">Fahrzeug *</label>
+                            <input type="text" id="vehicle" name="vehicle" required placeholder="Marke, Modell, Jahrgang, Kennzeichen">
+                        </div>
+                        <div class="form-group">
+                            <label for="notes">Zusätzliche Informationen</label>
+                            <textarea id="notes" name="notes" rows="4" placeholder="Beschreiben Sie das Problem oder besondere Wünsche..."></textarea>
+                        </div>
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="terms" name="terms" required>
+                            <label for="terms">Ich akzeptiere die <a href="#">AGB</a> und <a href="#">Datenschutzerklärung</a> *</label>
+                        </div>
+                    </form>
+                    <div class="booking-nav">
+                        <button class="btn btn-secondary" onclick="prevStep(2)">Zurück</button>
+                        <button class="btn btn-primary" onclick="submitBooking()">Termin buchen</button>
+                    </div>
+                </div>
+
+                <!-- Schritt 4: Bestätigung -->
+                <div class="booking-step" id="step4" style="display: none;">
+                    <div class="booking-success">
+                        <div class="success-icon">✅</div>
+                        <h2>Termin erfolgreich gebucht!</h2>
+                        <p>Vielen Dank für Ihre Buchung. Sie erhalten in Kürze eine Bestätigung per E-Mail.</p>
+                        <div class="booking-summary" id="booking-summary">
+                            <!-- Wird dynamisch gefüllt -->
+                        </div>
+                        <button class="btn btn-primary" onclick="location.href='index.html'">Zur Startseite</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>RUDOLFS KFZ</h3>
+                    <p>Ihr zuverlässiger Partner für KFZ-Service und Reparaturen.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Links</h3>
+                    <ul>
+                        <li><a href="index.html">Start</a></li>
+                        <li><a href="services.html">Leistungen</a></li>
+                        <li><a href="booking.html">Termin</a></li>
+                        <li><a href="contact.html">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Rechtliches</h3>
+                    <ul>
+                        <li><a href="#">Impressum</a></li>
+                        <li><a href="#">Datenschutz</a></li>
+                        <li><a href="#">AGB</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Rudolfs KFZ-Werkstatt. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/booking.js"></script>
+</body>
+</html>
