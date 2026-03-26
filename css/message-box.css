@@ -1,0 +1,209 @@
+/* ===== MESSAGE BOX STYLES ===== */
+.message-box-section {
+    padding: 5rem 0;
+    background: var(--light-color);
+}
+
+.message-box-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+.message-box-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.message-box-header h2 {
+    font-size: 2rem;
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+}
+
+.message-box-header p {
+    color: var(--secondary-color);
+    font-size: 1.1rem;
+}
+
+.message-box-form .form-group {
+    margin-bottom: 1.5rem;
+}
+
+.message-box-form label {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+}
+
+.message-box-form input,
+.message-box-form textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+.message-box-form input:focus,
+.message-box-form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.message-box-form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.message-box-submit {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.message-box-success {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.success-icon {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+}
+
+.message-box-success h3 {
+    font-size: 2rem;
+    color: var(--success-color);
+    margin-bottom: 1rem;
+}
+
+.message-box-success p {
+    color: var(--secondary-color);
+    font-size: 1.2rem;
+}
+
+/* Admin View (Hidden Messages) */
+.admin-messages {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 3px solid var(--border-color);
+}
+
+.admin-messages h3 {
+    font-size: 1.5rem;
+    color: var(--dark-color);
+    margin-bottom: 1.5rem;
+}
+
+.message-list {
+    list-style: none;
+}
+
+.message-item {
+    background: var(--light-color);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--primary-color);
+}
+
+.message-item.unread {
+    background: rgba(37, 99, 235, 0.05);
+    border-left-color: var(--accent-color);
+}
+
+.message-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.message-item-header h4 {
+    font-size: 1.2rem;
+    color: var(--dark-color);
+}
+
+.message-item-date {
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+.message-item-content {
+    margin-bottom: 1rem;
+}
+
+.message-item-content p {
+    color: var(--text-color);
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
+}
+
+.message-item-contact {
+    font-size: 0.95rem;
+    color: var(--secondary-color);
+}
+
+.message-item-contact strong {
+    color: var(--dark-color);
+}
+
+.message-actions {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.message-actions button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-mark-read {
+    background: var(--success-color);
+    color: white;
+}
+
+.btn-mark-read:hover {
+    background: #0d9668;
+}
+
+.btn-delete {
+    background: #ef4444;
+    color: white;
+}
+
+.btn-delete:hover {
+    background: #dc2626;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .message-box-container {
+        padding: 1.5rem;
+    }
+    
+    .message-item-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .message-actions {
+        flex-direction: column;
+    }
+}

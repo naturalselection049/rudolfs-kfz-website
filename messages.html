@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nachrichten | Rudolfs KFZ-Werkstatt</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/message-box.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>🔧 RUDOLFS KFZ</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Start</a></li>
+                <li><a href="services.html">Leistungen</a></li>
+                <li><a href="booking.html">Termin</a></li>
+                <li><a href="contact.html">Kontakt</a></li>
+                <li><a href="messages.html" class="admin-link">📬 Nachrichten</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Message Box Section -->
+    <section class="message-box-section">
+        <div class="container">
+            <div class="message-box-container">
+                <div class="message-box-header">
+                    <h2>📬 Kundennachrichten</h2>
+                    <p>Hinterlassen Sie uns eine kurze Nachricht mit Ihren Kontaktdaten</p>
+                </div>
+
+                <!-- Customer Form -->
+                <form class="message-box-form" id="customer-message-form">
+                    <div class="form-group">
+                        <label for="msg-name">Name *</label>
+                        <input type="text" id="msg-name" name="name" required placeholder="Ihr vollständiger Name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="msg-email">E-Mail *</label>
+                        <input type="email" id="msg-email" name="email" required placeholder="ihre@email.de">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="msg-phone">Telefon *</label>
+                        <input type="tel" id="msg-phone" name="phone" required placeholder="+49 123 456 789">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="msg-vehicle">Fahrzeug</label>
+                        <input type="text" id="msg-vehicle" name="vehicle" placeholder="Marke, Modell, Baujahr">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="msg-subject">Betreff *</label>
+                        <input type="text" id="msg-subject" name="subject" required placeholder="Worum geht es?">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="msg-message">Nachricht *</label>
+                        <textarea id="msg-message" name="message" rows="6" required placeholder="Ihre Nachricht an uns..."></textarea>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="msg-privacy" name="privacy" required>
+                        <label for="msg-privacy">Ich akzeptiere die <a href="#">Datenschutzerklärung</a> *</label>
+                    </div>
+
+                    <div class="message-box-submit">
+                        <button type="submit" class="btn btn-primary btn-large">Nachricht senden</button>
+                    </div>
+                </form>
+
+                <!-- Success Message (Hidden by default) -->
+                <div class="message-box-success" id="message-success" style="display: none;">
+                    <div class="success-icon">✅</div>
+                    <h3>Nachricht erfolgreich gesendet!</h3>
+                    <p>Vielen Dank für Ihre Nachricht. Wir melden uns in Kürze bei Ihnen.</p>
+                    <button class="btn btn-primary" onclick="location.href='messages.html'">Weitere Nachricht senden</button>
+                </div>
+
+                <!-- Admin Section (Hidden for customers) -->
+                <div class="admin-messages" id="admin-section" style="display: none;">
+                    <h3>📬 Eingegangene Nachrichten</h3>
+                    <div class="admin-controls" style="margin-bottom: 1rem;">
+                        <button class="btn btn-secondary" onclick="toggleMessages()">Alle anzeigen/ausblenden</button>
+                        <button class="btn btn-secondary" onclick="clearAllMessages()">Alle löschen</button>
+                    </div>
+                    <ul class="message-list" id="message-list">
+                        <!-- Messages will be loaded here -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>RUDOLFS KFZ</h3>
+                    <p>Ihr zuverlässiger Partner für KFZ-Service und Reparaturen.</p>
+                </div>
+                <div class="footer-col">
+                    <h3>Links</h3>
+                    <ul>
+                        <li><a href="index.html">Start</a></li>
+                        <li><a href="services.html">Leistungen</a></li>
+                        <li><a href="booking.html">Termin</a></li>
+                        <li><a href="contact.html">Kontakt</a></li>
+                        <li><a href="messages.html">Nachrichten</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3>Rechtliches</h3>
+                    <ul>
+                        <li><a href="#">Impressum</a></li>
+                        <li><a href="#">Datenschutz</a></li>
+                        <li><a href="#">AGB</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Rudolfs KFZ-Werkstatt. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/messages.js"></script>
+</body>
+</html>
